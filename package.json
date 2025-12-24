@@ -7,6 +7,7 @@
     "start": "npm run build && node backend/server.js",
     "dev": "node backend/server.js",
     "preview": "cd frontend-react && npm run preview",
+    "postinstall": "npm --prefix frontend-react ci",
     "test": "node --test backend/__tests__",
     "test:backend": "node --test backend/__tests__/unit.test.js",
     "test:backend:integration": "node --test backend/__tests__/integration.test.js",
