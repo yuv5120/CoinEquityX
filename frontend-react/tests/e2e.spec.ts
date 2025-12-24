@@ -83,7 +83,7 @@ test.describe('Critical User Flows', () => {
     });
     await page.goto(base);
     
-    await expect(page.getByText('Welcome to Crypto Pulse')).toBeVisible();
+    await expect(page.getByText('Welcome to CoinEquityX')).toBeVisible();
     await expect(page.getByLabel('Email Address')).toBeVisible();
     await expect(page.getByRole('button', { name: /Sign In/i })).toBeVisible();
   });

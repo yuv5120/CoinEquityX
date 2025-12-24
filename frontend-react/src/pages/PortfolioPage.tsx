@@ -12,7 +12,6 @@ import {
   TableBody,
   MenuItem,
   Chip,
-  Typography as MuiTypography,
   Grid,
   Paper,
   Box,

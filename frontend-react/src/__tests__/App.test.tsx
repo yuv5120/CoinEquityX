@@ -98,7 +98,7 @@ describe('App Integration Tests', () => {
   it('should render auth page when not logged in', async () => {
     render(<AppWithProviders />);
     await waitFor(() => {
-      expect(screen.getByText(/welcome to crypto pulse/i)).toBeInTheDocument();
+      expect(screen.getByText(/welcome to coinequityx/i)).toBeInTheDocument();
     });
   });
 

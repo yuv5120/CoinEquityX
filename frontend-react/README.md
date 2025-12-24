@@ -1,4 +1,4 @@
-# 🚀 Crypto Pulse - Professional Cryptocurrency Dashboard
+# 🚀 CoinEquityX - Professional Cryptocurrency Dashboard
 
 A modern, production-ready cryptocurrency tracking application built with React, TypeScript, and Material-UI.
 

@@ -188,7 +188,7 @@ export default function AuthPage() {
             </Box>
             <Box textAlign="center">
               <Typography variant="h6" fontWeight={500} gutterBottom sx={{ fontSize: '1.1rem' }}>
-                Welcome to Crypto Pulse
+                Welcome to CoinEquityX
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8125rem' }}>
                 {isSignUp ? 'Create your account to start trading' : 'Welcome back! Sign in to continue'}

@@ -260,7 +260,7 @@ function Shell() {
                 letterSpacing: '-0.01em',
               }}
             >
-              {marketMode === 'crypto' ? 'Crypto Pulse' : 'Stock Market'}
+              {marketMode === 'crypto' ? 'CoinEquityX' : 'Stock Market'}
             </Typography>
           </Stack>
           <Stack direction="row" spacing={1.5} alignItems="center">
@@ -484,7 +484,7 @@ function Shell() {
             spacing={2}
           >
             <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8125rem' }}>
-              © {new Date().getFullYear()} Crypto Pulse. Real-time cryptocurrency data.
+              © {new Date().getFullYear()} CoinEquityX. Real-time cryptocurrency data.
             </Typography>
             <Stack direction="row" spacing={2.5}>
               <Typography

@@ -1,4 +1,4 @@
-# Crypto Pulse 🚀
+# CoinEquityX 🚀
 
 A comprehensive, full-stack cryptocurrency and stock market dashboard with real-time data, portfolio tracking, AI-powered chat, and advanced analytics.
 
@@ -168,8 +168,8 @@ A comprehensive, full-stack cryptocurrency and stock market dashboard with real-
 
 ### Directory Structure
 ```
-Cryptocurrency/
-├── frontend-react/           # React 18 SPA with Vite
+CoinEquityX/
+├── frontend-react/           # React 18 SPA with Vite (main frontend)
 │   ├── src/
 │   │   ├── pages/           # Lazy-loaded page components
 │   │   ├── components/      # Reusable UI components
@@ -183,6 +183,7 @@ Cryptocurrency/
 │   │   ├── supabase.ts      # Supabase client
 │   │   ├── __tests__/       # Unit tests (Vitest)
 │   │   └── types.ts         # TypeScript interfaces
+│   ├── dist/                # Built React production bundle
 │   ├── tests/               # E2E tests (Playwright)
 │   ├── vitest.config.ts     # Unit test config
 │   ├── playwright.config.ts # E2E test config
@@ -190,7 +191,7 @@ Cryptocurrency/
 │   └── .env                 # Frontend env vars
 │
 ├── backend/
-│   ├── server.js            # HTTP server & API routes
+│   ├── server.js            # HTTP server, API routes, & static file serving
 │   └── __tests__/           # Backend tests (Node.js test runner)
 │       ├── unit.test.js
 │       ├── integration.test.js
@@ -287,27 +288,35 @@ VITE_API_BASE_URL=http://localhost:3000
 
 ### Development Mode
 
-**Terminal 1 - Backend (Port 3000)**
+**Full Development (Recommended)**
 ```bash
-npm start
-# or
+# Terminal 1 - Backend + React dev server
+cd frontend-react
+npm run dev
+
+# Terminal 2 (in another terminal)
 npm run dev
 ```
 
-**Terminal 2 - Frontend (Port 5173)**
-```bash
-cd frontend-react
-npm run dev
-```
+This runs:
+- React dev server on http://localhost:5173 with HMR
+- Backend API on http://localhost:3000
 
 Open http://localhost:5173 in your browser.
 
-### Production Build
+### Production Build & Run
 
 ```bash
 npm run build
 npm start
 ```
+
+This will:
+1. Build the React app into `frontend-react/dist`
+2. Start the Node.js backend server
+3. Serve the built React app from the backend on http://localhost:3000
+
+The backend automatically serves the React SPA from `frontend-react/dist` with fallback routing to index.html for client-side routing.
 
 ---
 
