@@ -1,6 +1,14 @@
 {
-  "buildCommand": "npm --prefix frontend-react run build",
+  "builds": [
+    {
+      "src": "frontend-react/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
   "installCommand": "npm ci && npm --prefix frontend-react ci",
-  "outputDirectory": "frontend-react/dist",
-  "framework": null
+  "buildCommand": "npm --prefix frontend-react run build",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
