@@ -43,6 +43,7 @@ jobs:
         with:
           name: backend-test-results
           path: backend/__tests__/results/
+          if-no-files-found: ignore
           retention-days: 7
 
   # Frontend Tests Job
@@ -83,6 +84,7 @@ jobs:
         with:
           name: frontend-test-results
           path: frontend-react/coverage/
+          if-no-files-found: ignore
           retention-days: 7
 
   # E2E Tests Job
