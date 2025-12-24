@@ -276,7 +276,7 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     needs: [build, e2e-tests]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.VERCEL_TOKEN != '' && secrets.VERCEL_ORG_ID != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.RENDER_DEPLOY_HOOK != ''
     environment:
       name: production
       url: https://your-app-domain.com
@@ -299,10 +299,12 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
           working-directory: frontend-react
+        if: secrets.VERCEL_TOKEN != '' && secrets.VERCEL_ORG_ID != '' && secrets.VERCEL_PROJECT_ID != ''
 
       - name: Deploy backend to Render
         run: |
           curl -sS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        if: secrets.RENDER_DEPLOY_HOOK != ''
 
       - name: Notify deployment success
         if: success()
